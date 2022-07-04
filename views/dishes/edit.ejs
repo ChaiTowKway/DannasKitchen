@@ -1,0 +1,46 @@
+<% layout('layouts/boilerplate') %> 
+
+<div class="row">
+    <h1 class="text-center">Edit Dish</h1>
+    <div class="col-md-6 offset-md-3">
+        <div class="card shadow">
+            <div class="card-body">
+                <form action="/mainpage/<%=dish._id%>?_method=PUT" method="POST" novalidate class="validated-form">
+                    <div class="mb-3">
+                        <label class="form-lable" for="title">Title</label>
+                        <input class="form-control" type="text" id="title" 
+                        name="dish[title] " value="<%=dish.title%>" required>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-lable" for="image">Image Url</label>
+                        <input class="form-control" type="text" id="image" 
+                        name="dish[image]" value="<%=dish.image%>" required>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-lable" for="price">Dish Price</label>
+                        <div class="input-group">
+                            <span class="input-group-text" id="price-label">$</span>
+                            <input class="form-control" type="text" id="price" 
+                            placeholder="0.00", aria-lable="price", aria-describedby="price-label" 
+                            name="dish[price]" value="<%=dish.price%>" required>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-lable" for="description">Description</label>
+                        <textarea class="form-control" type="text" id="description" 
+                        name="dish[description]" required><%=dish.description%></textarea>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-success">Update Dish</button>
+                    </div>
+                </form>
+                <a href="/mainpage/<%= dish._id %> ">Back To Main Page</a>
+            </div>
+          </div>
+    </div>
+</div>
+

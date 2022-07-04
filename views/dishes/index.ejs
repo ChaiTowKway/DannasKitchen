@@ -1,0 +1,23 @@
+<% layout('layouts/boilerplate') %> 
+<h1>Danna's Home-made Dishes</h1>
+<!-- <div>
+    <a href="/mainpage/new">Add Dish</a>
+</div> -->
+
+<% for (let dish of dishes) {%>
+<div class="card mb-3" >
+    <div class="row">
+        <div class="col-md-4">
+            <img class="img-fluid" src="<%=dish.image%>">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title"><%= dish.title %></h5>
+                <p class="card-text"><%= dish.description %></p>
+                <p class="card-text">$<%= dish.price %></p>
+                <a class="btn btn-primary" href="/mainpage/<%= dish._id %>"><%= dish.title %></a>
+            </div>
+        </div>
+    </div>
+</div>
+<% }%> 
